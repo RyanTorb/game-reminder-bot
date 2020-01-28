@@ -22,15 +22,16 @@ function respond() {
 function postMessage() {
   var botResponse, options, body, botReq;
   var nextGame = new Date();
+  nextGame.setMonth(1);
   var firstGame = new Date();
   firstGame.setMonth(1);
   firstGame.setDate(9);
   var secondGame = new Date();
-  firstGame.setMonth(1);
-  firstGame.setDate(16);
+  secondGame.setMonth(1);
+  secondGame.setDate(16);
   var thirdGame = new Date();
-  firstGame.setMonth(1);
-  firstGame.setDate(23);
+  thirdGame.setMonth(1);
+  thirdGame.setDate(23);
   if(today.getDate() < firstGame.getDate()){
     nextGame.setDate(firstGame.getDate());}
   else if(today.getDate() < secondGame.getDate()){
