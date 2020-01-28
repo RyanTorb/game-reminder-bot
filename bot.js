@@ -3,8 +3,6 @@ var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
 
-int schedule[][] = {{10, 9, 10}, {10, 16, 10}, {10, 23, 10}};
-
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       gameRegex = /^\game$/;
