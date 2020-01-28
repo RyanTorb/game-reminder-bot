@@ -27,7 +27,7 @@ function postMessage() {
   var secondGame = new Date();
   var thirdGame = new Date();
   var date1 = today.getFullYear()+'-'+(firstGame.getMonth()+1)+'-'+firstGame.getDate();
-  botResponse = date;
+  botResponse = date1;
 
   options = {
     hostname: 'api.groupme.com',
