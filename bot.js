@@ -21,7 +21,12 @@ function respond() {
 
 function postMessage() {
   var botResponse, options, body, botReq;
-
+  var firstGame = new Date();
+  firstGame.setMonth(1);
+  firstGame.setDate(9);
+  var secondGame = new Date();
+  var thirdGame = new Date();
+  var date1 = today.getFullYear()+'-'+(firstGame.getMonth()+1)+'-'+firstGame.getDate();
   botResponse = date;
 
   options = {
