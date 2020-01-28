@@ -38,7 +38,7 @@ function postMessage() {
     nextGame.setDate(secondGame.getDate());}
   else if(today.getDate() < thirdGame.getDate()){
     nextGame.setDate(thirdGame.getDate());}
-  if(today.getDate() < thirdGame.getDate()){
+  if(today.getMonth() < nextGame.getMonth() || (today.getMonth()==nextGame.getMonth() && today.getDate() < thirdGame.getDate())){
     var date1 = "Great question! Our next game is on " + today.getFullYear()+'-'+(today.getMonth()+1)+'-'+nextGame.getDate();}
   else{
     var date1 = "There is no next game! I'll see y'all next season! (Unless there are playoff games and Ryan didn't update my code, in which case blame him and not me)";}
