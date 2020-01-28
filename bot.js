@@ -3,11 +3,13 @@ var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
 
+int schedule[][] = {{10, 9, 10}, {10, 16, 10}, {10, 23, 10}};
+
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\game$/;
+      gameRegex = /^\game$/;
 
-  if(request.text && botRegex.test(request.text)) {
+  if(request.text && gameRegex.test(request.text)) {
     this.res.writeHead(200);
     postMessage();
     this.res.end();
@@ -21,7 +23,7 @@ function respond() {
 function postMessage() {
   var botResponse, options, body, botReq;
 
-  botResponse = "Oh yeah I'm cooking right now."
+  botResponse = "Great question!"
 
   options = {
     hostname: 'api.groupme.com',
