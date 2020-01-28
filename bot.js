@@ -6,7 +6,7 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      gameRegex = /^\game$/;
+      gameRegex = game;
 
   if(request.text && gameRegex.test(request.text)) {
     this.res.writeHead(200);
@@ -39,7 +39,7 @@ function postMessage() {
   else if(today.getMonth() < nextGame.getMonth() || (today.getMonth()==nextGame.getMonth() && today.getDate() < thirdGame.getDate())){
     nextGame.setDate(thirdGame.getDate());}
   if(today.getMonth() < nextGame.getMonth() || (today.getMonth()==nextGame.getMonth() && today.getDate() < thirdGame.getDate())){
-    var date1 = "Great question! Our next game is on " + today.getFullYear()+'-'+(nextGame.getMonth()+1)+'-'+nextGame.getDate();}
+    var date1 = "Great question! Our next game is on " + today.getFullYear()+'-'+(nextGame.getMonth()+1)+'-'+nextGame.getDate() + "! Good luck everyone! I wish I could play, but honestly, even my guaranteed 100% mechanical efficiency is an inferior option to Ryan's jump shot.";}
   else{
     var date1 = "There is no next game! I'll see y'all next season! (Unless there are playoff games and Ryan didn't update my code, in which case blame him and not me)";}
   botResponse = date1;
