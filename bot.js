@@ -1,5 +1,9 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
+var today = new Date();
+var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+var dateTime = date+' '+time;
 
 var botID = process.env.BOT_ID;
 
@@ -21,7 +25,7 @@ function respond() {
 function postMessage() {
   var botResponse, options, body, botReq;
 
-  botResponse = "Great question!";
+  botResponse = datetime;
 
   options = {
     hostname: 'api.groupme.com',
