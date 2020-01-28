@@ -21,12 +21,26 @@ function respond() {
 
 function postMessage() {
   var botResponse, options, body, botReq;
+  var nextGame = new Date();
   var firstGame = new Date();
   firstGame.setMonth(1);
   firstGame.setDate(9);
   var secondGame = new Date();
+  firstGame.setMonth(1);
+  firstGame.setDate(16);
   var thirdGame = new Date();
-  var date1 = today.getFullYear()+'-'+(firstGame.getMonth()+1)+'-'+firstGame.getDate();
+  firstGame.setMonth(1);
+  firstGame.setDate(23);
+  if(today.getDate() < firstGame.getDate()){
+    nextGame.setDate(firstGame.getDate());}
+  else if(today.getDate() < secondGame.getDate()){
+    nextGame.setDate(secondGame.getDate());}
+  else if(today.getDate() < thirdGame.getDate()){
+    nextGame.setDate(thirdGame.getDate());}
+  if(today.getDate() < thirdGame.getDate()){
+    var date1 = "Great question! Our next game is on " + today.getFullYear()+'-'+(today.getMonth()+1)+'-'+nextGame.getDate();}
+  else{
+    var date1 = "There is no next game! I'll see y'all next season! (Unless there are playoff games and Ryan didn't update my code, in which case blame him and not me);}
   botResponse = date1;
 
   options = {
