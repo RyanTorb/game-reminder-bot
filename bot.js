@@ -42,7 +42,7 @@ function postMessage() {
   else if(today.getMonth() < nextGame.getMonth() || (today.getMonth()==nextGame.getMonth() && today.getDate() < thirdGame.getDate())){
     nextGame.setDate(thirdGame.getDate());}
   if(today.getMonth() < nextGame.getMonth() || (today.getMonth()==nextGame.getMonth() && today.getDate() < thirdGame.getDate())){
-    date1 = "Great question " + author + "! Our next contest is on " + (nextGame.getMonth()+1)+'-'+nextGame.getDate()+'-'+today.getYear() + "! Wishing y'all lot's of luck!";}
+    date1 = "Great question " + author + "! Our next contest is on " + (nextGame.getMonth()+1)+'-'+nextGame.getDate()+'-'+today.getFullYear() + "! Wishing y'all lot's of luck!";}
   else{
     date1 = "Unfortunately, there is no next contest! I'll see y'all next season! (Unless we are in playoffs and Ryan didn't update my code, in which case blame him and not me)";}
   botResponse = date1;
