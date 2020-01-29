@@ -4,6 +4,7 @@ var today = new Date();
 var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 var botID = process.env.BOT_ID;
 var date1;
+var author;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
@@ -11,6 +12,7 @@ function respond() {
 
   if(request.text && gameRegex.test(request.text)) {
     this.res.writeHead(200);
+    author = request.name;
     postMessage();
     this.res.end();
   } else {
@@ -40,7 +42,7 @@ function postMessage() {
   else if(today.getMonth() < nextGame.getMonth() || (today.getMonth()==nextGame.getMonth() && today.getDate() < thirdGame.getDate())){
     nextGame.setDate(thirdGame.getDate());}
   if(today.getMonth() < nextGame.getMonth() || (today.getMonth()==nextGame.getMonth() && today.getDate() < thirdGame.getDate())){
-    date1 = "Great question! Our next contest is on " + today.getFullYear()+'-'+(nextGame.getMonth()+1)+'-'+nextGame.getDate() + "!";}
+    date1 = "Great question " + author + "! Our next contest is on " + today.getFullYear()+'-'+(nextGame.getMonth()+1)+'-'+nextGame.getDate() + "!";}
   else{
     date1 = "Unfortunately, there is no next contest! I'll see y'all next season! (Unless we are in playoffs and Ryan didn't update my code, in which case blame him and not me)";}
   botResponse = date1;
