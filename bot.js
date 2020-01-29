@@ -7,7 +7,7 @@ var date1;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      gameRegex = /.*game.*/;
+      gameRegex = /.*(g|G)(a|A)(m|M)(e|E).*/;
 
   if(request.text && gameRegex.test(request.text)) {
     this.res.writeHead(200);
