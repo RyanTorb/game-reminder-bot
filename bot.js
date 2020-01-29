@@ -3,6 +3,7 @@ var cool = require('cool-ascii-faces');
 var today = new Date();
 var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 var botID = process.env.BOT_ID;
+var date1;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
@@ -39,9 +40,9 @@ function postMessage() {
   else if(today.getMonth() < nextGame.getMonth() || (today.getMonth()==nextGame.getMonth() && today.getDate() < thirdGame.getDate())){
     nextGame.setDate(thirdGame.getDate());}
   if(today.getMonth() < nextGame.getMonth() || (today.getMonth()==nextGame.getMonth() && today.getDate() < thirdGame.getDate())){
-    var date1 = "Great question! Our next game is on " + today.getFullYear()+'-'+(nextGame.getMonth()+1)+'-'+nextGame.getDate() + "! Good luck everyone! I wish I could play, but honestly, even my guaranteed 100% mechanical efficiency is an inferior option to Ryan's jump shot.";}
+    date1 = "Great question! Our next game is on " + today.getFullYear()+'-'+(nextGame.getMonth()+1)+'-'+nextGame.getDate() + "!";}
   else{
-    var date1 = "There is no next game! I'll see y'all next season! (Unless there are playoff games and Ryan didn't update my code, in which case blame him and not me)";}
+    date1 = "There is no next game! I'll see y'all next season! (Unless there are playoff games and Ryan didn't update my code, in which case blame him and not me)";}
   botResponse = date1;
 
   options = {
